@@ -1,0 +1,29 @@
+#服务端口
+server:
+  port: 18080
+
+spring:
+  application:
+    name: tanhua-app-server
+
+  redis:  #redis配置
+    port: 6379
+    host: 192.168.50.128
+    database: 1
+
+  cloud:  #nacos配置
+    nacos:
+      discovery:
+        server-addr: 192.168.50.128:8848
+
+
+dubbo:    #dubbo配置
+  registry:
+    address: spring-cloud://localhost
+  consumer:
+    check: false
+
+#tanhua:
+#  mail:
+#    user: sunxiaopeng878903@163.com
+#    password: XXMEGSMVBCTBFEKA
