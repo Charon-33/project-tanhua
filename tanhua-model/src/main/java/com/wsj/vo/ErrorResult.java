@@ -19,6 +19,7 @@ public class ErrorResult {
     }
 
     public static ErrorResult fail() {
+        // Lombok提供的方法， builder()是创建对象， .errCode 是给errCode赋值
         return ErrorResult.builder().errCode("000001").errMessage("发送验证码失败").build();
     }
 
@@ -33,4 +34,25 @@ public class ErrorResult {
     public static ErrorResult mobileError() {
         return ErrorResult.builder().errCode("000004").errMessage("手机号码已注册").build();
     }
+
+    public static ErrorResult contentError() {
+        return ErrorResult.builder().errCode("000005").errMessage("动态内容为空").build();
+    }
+
+    public static ErrorResult likeError() {
+        return ErrorResult.builder().errCode("000006").errMessage("用户已点赞").build();
+    }
+
+    public static ErrorResult disLikeError() {
+        return ErrorResult.builder().errCode("000007").errMessage("用户未点赞").build();
+    }
+
+    public static ErrorResult loveError() {
+        return ErrorResult.builder().errCode("000008").errMessage("用户已喜欢").build();
+    }
+
+    public static ErrorResult disloveError() {
+        return ErrorResult.builder().errCode("000009").errMessage("用户未喜欢").build();
+    }
+
 }

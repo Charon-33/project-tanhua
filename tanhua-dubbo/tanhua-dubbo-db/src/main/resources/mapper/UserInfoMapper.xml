@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsj.dubbo.mapper.UserInfoMapper">
+
+    <select id="findBlackList" resultType="com.wsj.domain.UserInfo">
+        select *
+        from tb_user_info
+        where id in (SELECT black_user_id
+                     FROM tb_black_list
+                     where user_id = #{userId})
+    </select>
+</mapper>

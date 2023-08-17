@@ -6,22 +6,22 @@ spring:
     name: tanhua-dubbo-db
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.50.128:3306/myproject_tanhua?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://192.168.50.132:3306/myproject_tanhua?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
     username: root
     password: 12345678
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.50.128:8848
+        server-addr: 192.168.50.132:8848
 
 dubbo:
   protocol:
     name: dubbo
     port: 20881
-  register:
+  registry:
     address: spring-cloud://localhost
   scan:
-    base-packages: com.wsj.api
+    base-packages: com.wsj.dubbo.apiImpl
 
 mybatis-plus:
   global-config:

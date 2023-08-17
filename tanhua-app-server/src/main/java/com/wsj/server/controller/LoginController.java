@@ -1,6 +1,6 @@
 package com.wsj.server.controller;
 
-import com.wsj.server.service.LoginService;
+import com.wsj.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,13 +15,13 @@ import java.util.Map;
 public class LoginController {
 
     @Autowired
-    private LoginService userService;
+    private UserService userService;
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody Map<String,Object> map){
         String phone = (String) map.get("phone");
         userService.sendCheckCode(phone);
-        return ResponseEntity.ok("获取验证码成功");
+        return ResponseEntity.ok("验证码：123456");
     }
 
     @PostMapping("/loginVerification")

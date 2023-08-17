@@ -12,7 +12,7 @@ import java.util.Properties;
  * 发邮件工具类
  */
 public class MailTemplate {
-    private MailProperties mailProperties;
+    private final MailProperties mailProperties;
 
     public MailTemplate(MailProperties mailProperties){
         this.mailProperties = mailProperties;
